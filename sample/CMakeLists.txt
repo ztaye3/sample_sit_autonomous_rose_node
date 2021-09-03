@@ -1,16 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(sample)
 
-find_package(catkin REQUIRED COMPONENTS
-  rospy
-  roscpp
-  std_msgs
-  geometry_msgs
-  sensor_msgs
-  nav_msgs
-  gps_common
-  tf
-)
+
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
   message(STATUS "Enabling coverage testing")
