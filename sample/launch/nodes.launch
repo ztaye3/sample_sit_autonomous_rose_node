@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="talker_cpp" pkg="sample" type="talker_cpp" output="screen"/>
+    <node name="talker_py" pkg="sample" type="talker.py" output="screen"/>
+</launch>
