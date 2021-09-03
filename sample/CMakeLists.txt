@@ -4,9 +4,7 @@ project(sample)
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg)
 
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
+
 ## Declare ROS messages and services
 # add_message_files(DIRECTORY msg FILES Num.msg)
 # add_service_files(DIRECTORY srv FILES AddTwoInts.srv)
@@ -17,8 +15,19 @@ include_directories(
 ## Declare a catkin package
 catkin_package()
 
-add_executable(talker_cpp src/talker.cpp)
-target_link_libraries(talker_cpp ${catkin_LIBRARIES})
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
+
+
+add_executable(${PROJECT_NAME}_gps_node src/talker.cpp)
+target_link_libraries(${PROJECT_NAME}_gps_node ${catkin_LIBRARIES})
+set_target_properties(${PROJECT_NAME}_gps_node PROPERTIES OUTPUT_NAME gps_node PREFIX "")
+
+install(TARGETS ${PROJECT_NAME}_gps_node
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 
 # add_executable(listener src/listener.cpp)
 # target_link_libraries(listener ${catkin_LIBRARIES})
