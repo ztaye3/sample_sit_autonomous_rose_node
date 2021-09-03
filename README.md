@@ -1,1 +1,0 @@
-# sample_sit_autonomous_rose_node
