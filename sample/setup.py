@@ -3,9 +3,9 @@
 from distutils.core import setup
 from catkin_pkg.python_setup import generate_distutils_setup
 
-d = generate_distutils_setup(
-    packages=['my_pkg_A'],
+setup_args = generate_distutils_setup(
+    packages=['sample'],
     package_dir={'': 'src'}
 )
 
-setup(**d)
+setup(**setup_args)
