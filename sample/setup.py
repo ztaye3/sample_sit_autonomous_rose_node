@@ -4,7 +4,7 @@ from setuptools import setup
 from catkin_pkg.python_setup import generate_distutils_setup
 
 setup_args = generate_distutils_setup(
-    packages=['sample'],
+    packages=['sample_sit_autonomous_rose_node/sample'],
     package_dir={'': 'scripts'}
 )
 
