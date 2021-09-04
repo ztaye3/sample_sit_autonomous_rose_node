@@ -43,6 +43,10 @@ install(TARGETS talker_cpp
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+install(DIRECTORY launch
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
 catkin_python_setup()
 
 install(PROGRAMS
@@ -51,10 +55,6 @@ install(PROGRAMS
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
-if (CATKIN_ENABLE_TESTING)
-  add_subdirectory(tests)
-endif()
 
-install(DIRECTORY launch
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+
+
