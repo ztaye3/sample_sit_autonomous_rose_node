@@ -2,17 +2,9 @@ cmake_minimum_required(VERSION 2.8.3)
 project(sample)
 
 ## Find catkin and any catkin packages
-find_package(catkin REQUIRED COMPONENTS
-  rospy
-  roscpp
-  std_msgs
-  geometry_msgs
-  sensor_msgs
-  nav_msgs
-  gps_common
-  tf
-  genmsg
-)
+set(CATKIN_DEPS std_msgs geometry_msgs rospy)
+set(SYS_DEPS python-serial python-sys)
+find_package(catkin REQUIRED COMPONENTS ${CATKIN_DEPS})
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
