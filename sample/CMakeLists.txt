@@ -31,7 +31,7 @@ install(TARGETS talker_cpp
 catkin_python_setup()
 catkin_install_python(
   PROGRAMS
-    scripts/talker.py
+    src/talker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
