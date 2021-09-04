@@ -15,6 +15,19 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  message(STATUS "Enabling coverage testing")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+endif()
+
+if (NOT "${CMAKE_CXX_STANDARD_COMPUTED_DEFAULT}")
+  message(STATUS "Changing CXX_STANDARD from C++98 to C++11")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+elseif ("${CMAKE_CXX_STANDARD_COMPUTED_DEFAULT}" STREQUAL "98")
+  message(STATUS "Changing CXX_STANDARD from C++98 to C++11")
+  set(CMAKE_CXX_STANDARD 11)
+endif()
+
 ## Declare ROS messages and services
 # add_message_files(DIRECTORY msg FILES Num.msg)
 # add_service_files(DIRECTORY srv FILES AddTwoInts.srv)
