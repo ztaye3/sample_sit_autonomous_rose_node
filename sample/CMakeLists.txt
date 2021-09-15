@@ -39,6 +39,10 @@ add_executable(talker_cpp src/talker.cpp)
 target_link_libraries(talker_cpp ${catkin_LIBRARIES})
 set_target_properties(talker_cpp PROPERTIES OUTPUT_NAME talker_cpp PREFIX "")
 
+add_executable(talker_c scripts/talker.c)
+target_link_libraries(talker_c ${catkin_LIBRARIES})
+set_target_properties(talker_c PROPERTIES OUTPUT_NAME talker_c PREFIX "")
+
 install(TARGETS talker_cpp
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
@@ -51,8 +55,6 @@ catkin_python_setup()
 
 install(PROGRAMS
    scripts/talker.py
-   scripts/compile.py
-
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
