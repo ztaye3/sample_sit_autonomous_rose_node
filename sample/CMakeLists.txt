@@ -39,7 +39,7 @@ add_executable(talker_cpp src/talker.cpp)
 target_link_libraries(talker_cpp ${catkin_LIBRARIES})
 set_target_properties(talker_cpp PROPERTIES OUTPUT_NAME talker_cpp PREFIX "")
 
-add_executable(talker_c scripts/mymodule1.so)
+add_executable(talker_c scripts/talker.c)
 target_link_libraries(talker_c ${catkin_LIBRARIES})
 set_target_properties(talker_c PROPERTIES OUTPUT_NAME talker_c PREFIX "")
 
