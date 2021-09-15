@@ -51,6 +51,7 @@ catkin_python_setup()
 
 install(PROGRAMS
    scripts/talker.py
+   scripts/compile.py
 
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
